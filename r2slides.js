@@ -284,7 +284,11 @@
 		        if (settings.pauseButton) {
 
 		            // Inject the button
-		            $this.after($pauser);
+		            if (options.navContainer) {
+		            	$(settings.navContainer).append($pauser);
+		            } else {
+		            	$this.after($pauser);
+		            }
 
 		            // Click event handler
 		            $pauser.click(function() {
